@@ -1,0 +1,60 @@
+<UserControl x:Class="ver10.CustomCalendar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Width="250" 
+             Height="135">
+
+    <UserControl.Resources>
+        
+        <SolidColorBrush x:Key="TodayBrush" Color="Gray"/>
+
+        <Style x:Key="DayBorderStyle" TargetType="Border">
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Background" Value="#1A1A1A"/>
+            <Setter Property="CornerRadius" Value="2"/>
+        </Style>
+
+        <Style x:Key="DayTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="LightGray"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <SolidColorBrush x:Key="SelectedDayBrush" Color="#159D8A"/>
+    </UserControl.Resources>
+
+    <Border BorderBrush="#535353"
+            BorderThickness="1"
+            CornerRadius="5"
+            Background="Transparent"
+            Padding="1"
+            ClipToBounds="True">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="MonthLabel" 
+                       Foreground="#D2D2D2"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       HorizontalAlignment="Left" 
+                       Margin="10, 2, 0, 2"/>
+
+            <UniformGrid Grid.Row="1" Columns="7" Margin="0,2,0,2">
+                <TextBlock Text="Пн" HorizontalAlignment="Center" Foreground="#B5B5B5" FontSize="10"/>
+                <TextBlock Text="Вт" HorizontalAlignment="Center" Foreground="#B5B5B5" FontSize="10"/>
+                <TextBlock Text="Ср" HorizontalAlignment="Center" Foreground="#B5B5B5" FontSize="10"/>
+                <TextBlock Text="Чт" HorizontalAlignment="Center" Foreground="#B5B5B5" FontSize="10"/>
+                <TextBlock Text="Пт" HorizontalAlignment="Center" Foreground="#B5B5B5" FontSize="10"/>
+                <TextBlock Text="Сб" HorizontalAlignment="Center" Foreground="#B5B5B5" FontSize="10"/>
+                <TextBlock Text="Вс" HorizontalAlignment="Center" Foreground="#B5B5B5" FontSize="10"/>
+            </UniformGrid>
+
+            <UniformGrid x:Name="DaysGrid" Grid.Row="2" Columns="7"/>
+        </Grid>
+    </Border>
+</UserControl>
